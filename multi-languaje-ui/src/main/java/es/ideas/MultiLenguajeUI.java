@@ -30,10 +30,9 @@ public class MultiLenguajeUI extends Application {
         loader.setResources(ResourceBundle.getBundle("es.ideas.i18n/cadenas",
                 Locale.getDefault()));
         Parent raiz = loader.load();
-        //PrimaryController pc = loader.getController();
-        //pc.setMainWindow(this);
 
-        Scene scene = new Scene(raiz);
+        //Cargamos la escena
+        Scene scene = new Scene(raiz);  
         stage.setScene(scene);
         stage.show();
     }
@@ -44,6 +43,7 @@ public class MultiLenguajeUI extends Application {
 
 
     public static void main(String[] args) {
+        //Ejecutamos
         launch();
     }
 

@@ -38,11 +38,14 @@ public class PrimaryController implements Initializable {
     private AreaChart<?, ?> notasDiseño;
 
     private MultiLenguajeUI aplicacionPrincipal;
-
+    
+    //Cargamos le FXMLLoader para recrgar la página con el idioma nuevo
     private FXMLLoader getFXMLLoader() {
         FXMLLoader loader = new FXMLLoader();
+        //selecionamos el idioma predeterminado
         loader.setResources(ResourceBundle.getBundle("es.ideas.i18n/cadenas",
                 Locale.getDefault()));
+        //cargamos el fxml
         loader.setLocation(getClass().getResource("primary.fxml"));
         return loader;
     }
@@ -55,7 +58,6 @@ public class PrimaryController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         //Inicialización del ComboBox con los días de la semana
-        //También tiene que traducirse
         String dias_semana[] = {rb.getString("lunes"),
             rb.getString("martes"),
             rb.getString("miercoles"),
@@ -65,8 +67,7 @@ public class PrimaryController implements Initializable {
             rb.getString("domingo")};
         cbSemana.setItems(FXCollections.observableArrayList(dias_semana));
 
-        //Crear un ToggleGroup para agrupar los ToggleButton
-        //Sólo puede haber uno seleccionado cada vez.
+        //Creación del ToggleGroup para poder cambiar de idioma
         ToggleGroup tg = new ToggleGroup();
         tg.getToggles().addAll(btnES, btnUSA, btnFR, btnIT, btnEN);
 
@@ -77,7 +78,8 @@ public class PrimaryController implements Initializable {
             if (newValue != null) {
                 ToggleButton tb = (ToggleButton) newValue.getToggleGroup()
                         .getSelectedToggle();
-                //Se comprueba el valor del Texto del ToggleButton y cambiamos el idioma predeterminado
+                //Se comprueba el valor del Texto del ToggleButton y cambiamos
+                //el idioma predeterminado
                 switch (tb.getText()) {
                     case "Ingles":
                         Locale.setDefault(Locale.ENGLISH);
@@ -101,6 +103,7 @@ public class PrimaryController implements Initializable {
                         System.out.println("Has seleccionado idioma Español");
                         break;
                 }
+                //Para que no haya excepciones intentamos que se recargue la app
                 try {
                     Parent pane = getFXMLLoader().load();
                     MultiLenguajeUI.getPrimaryStage().getScene().setRoot(pane);
