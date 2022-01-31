@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"  stylesheets="@css/stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ideas.PrimaryController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@css/stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ideas.PrimaryController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -39,11 +39,11 @@
                   <AnchorPane GridPane.columnSpan="2">
                      <children>
                         <Label prefHeight="126.0" prefWidth="600.0" text="%idioma" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <ButtonBar layoutX="79.0" layoutY="23.0" prefHeight="80.0" prefWidth="442.0">
+                        <ButtonBar layoutX="243.0" layoutY="29.0" prefHeight="114.0" prefWidth="640.0">
                           <buttons>
                               <ToggleButton id="btnES" fx:id="btnES" accessibleHelp="%español" minWidth="54.0" mnemonicParsing="false" prefHeight="130.0" text="Español">
                                  <graphic>
-                                    <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="97.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@pictures/espana.png" />
                                        </image>
@@ -53,9 +53,9 @@
                                     <Tooltip text="%btnES" />
                                  </tooltip>
                               </ToggleButton>
-                              <ToggleButton id="btnUSA" fx:id="btnUSA" accessibleHelp="%EEUU" mnemonicParsing="false" prefHeight="82.0" prefWidth="114.0" text="EEUU">
+                              <ToggleButton id="btnUSA" fx:id="btnUSA" accessibleHelp="%EEUU" mnemonicParsing="false" prefHeight="132.0" prefWidth="114.0" text="EEUU">
                                  <graphic>
-                                    <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="103.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@pictures/estados-unidos.png" />
                                        </image>
@@ -65,9 +65,9 @@
                                     <Tooltip text="%btnUSA" />
                                  </tooltip>
                               </ToggleButton>
-                              <ToggleButton id="btnFR" fx:id="btnFR" accessibleHelp="%frances" minWidth="57.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="134.0" text="Frances">
+                              <ToggleButton id="btnFR" fx:id="btnFR" accessibleHelp="%frances" minWidth="57.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="134.0" text="Frances">
                                  <graphic>
-                                    <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="123.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@pictures/francia.png" />
                                        </image>
@@ -77,9 +77,9 @@
                                     <Tooltip text="%btnFR" />
                                  </tooltip>
                               </ToggleButton>
-                              <ToggleButton id="btnIT" fx:id="btnIT" accessibleHelp="%italiano" mnemonicParsing="false" prefHeight="90.0" text="Italiano">
+                              <ToggleButton id="btnIT" fx:id="btnIT" accessibleHelp="%italiano" mnemonicParsing="false" prefHeight="144.0" text="Italiano">
                                  <graphic>
-                                    <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="92.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@pictures/italia.png" />
                                        </image>
@@ -89,9 +89,9 @@
                                     <Tooltip text="%btnIT" />
                                  </tooltip>
                               </ToggleButton>
-                              <ToggleButton id="btnEN" fx:id="btnEN" accessibleHelp="%ingles" mnemonicParsing="false" prefHeight="104.0" text="Ingles">
+                              <ToggleButton id="btnEN" fx:id="btnEN" accessibleHelp="%ingles" mnemonicParsing="false" prefHeight="117.0" prefWidth="153.0" text="Ingles">
                                  <graphic>
-                                    <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="92.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@pictures/reino-unido.png" />
                                        </image>
