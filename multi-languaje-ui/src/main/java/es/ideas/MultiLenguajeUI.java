@@ -32,7 +32,8 @@ public class MultiLenguajeUI extends Application {
         Parent raiz = loader.load();
 
         //Cargamos la escena
-        Scene scene = new Scene(raiz);  
+        Scene scene = new Scene(raiz);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
