@@ -37,70 +37,9 @@ public class PrimaryController implements Initializable {
     @FXML
     private AreaChart<?, ?> notasDiseño;
 
-    
     private MultiLenguajeUI aplicacionPrincipal;
-    
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
 
-        //Inicialización del ComboBox con los días de la semana
-        //También tiene que traducirse
-        String dias_semana[] = {"lunes", "martes", "miércoles", "jueves",
-           "viernes", "sábado", "domingo"};
-       cbSemana.setItems(FXCollections.observableArrayList(dias_semana));
-
-    
-        //Crear un ToggleGroup para agrupar los ToggleButton
-        //Sólo puede haber uno seleccionado cada vez.
-        ToggleGroup tg= new ToggleGroup();
-        tg.getToggles().addAll(btnES,btnUSA,btnFR,btnIT,btnEN);
-    
-         /**
-         * Listener para cambiar el idioma
-         */        
-        tg.selectedToggleProperty().addListener((obs,oldValue,newValue)->{
-            if (newValue != null ){
-               ToggleButton tb = (ToggleButton) newValue.getToggleGroup()
-                       .getSelectedToggle();               
-               //Se comprueba el valor del Texto del ToggleButton y cambiamos el idioma predeterminado
-               switch (tb.getText()){
-                   case "Ingles":
-                       Locale.setDefault(Locale.ENGLISH);
-                       System.out.println("Has seleccionado idioma INGLÉS");
-                       
-                       break;  
-                   case "Frances":
-                       Locale.setDefault(Locale.FRENCH);
-                       System.out.println("Has seleccionado idioma FRANCÉS");
-                       break;
-                   case "EEUU":
-                       Locale.setDefault(Locale.US);
-                       System.out.println("Has seleccionado idioma FRANCÉS");
-                       break;
-                   case "Italiano":
-                       Locale.setDefault(Locale.ITALIAN);
-                       System.out.println("Has seleccionado idioma FRANCÉS");
-                       break;
-                   case "Español":
-                       Locale.setDefault(new Locale("es"));
-                       System.out.println("Has seleccionado idioma FRANCÉS");
-                       break;
-               }
-               try{
-                Parent pane = getFXMLLoader().load();
-                MultiLenguajeUI.getPrimaryStage().getScene().setRoot(pane);
-               }catch(IOException ieo){                   
-               }               
-               MultiLenguajeUI.getPrimaryStage().show();
-               newValue.getToggleGroup().getSelectedToggle().setSelected(false);
-            }
-               
-        });
-    
-    }
-    
-   private FXMLLoader getFXMLLoader(){
+    private FXMLLoader getFXMLLoader() {
         FXMLLoader loader = new FXMLLoader();
         loader.setResources(ResourceBundle.getBundle("es.ideas.i18n/cadenas",
                 Locale.getDefault()));
@@ -108,8 +47,71 @@ public class PrimaryController implements Initializable {
         return loader;
     }
 
-    public void setMainWindow(MultiLenguajeUI main){
-        this.aplicacionPrincipal= main;
+    public void setMainWindow(MultiLenguajeUI main) {
+        this.aplicacionPrincipal = main;
     }
-    
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+        //Inicialización del ComboBox con los días de la semana
+        //También tiene que traducirse
+        String dias_semana[] = {rb.getString("lunes"),
+            rb.getString("martes"),
+            rb.getString("miercoles"),
+            rb.getString("jueves"),
+            rb.getString("viernes"),
+            rb.getString("sabado"),
+            rb.getString("domingo")};
+        cbSemana.setItems(FXCollections.observableArrayList(dias_semana));
+
+        //Crear un ToggleGroup para agrupar los ToggleButton
+        //Sólo puede haber uno seleccionado cada vez.
+        ToggleGroup tg = new ToggleGroup();
+        tg.getToggles().addAll(btnES, btnUSA, btnFR, btnIT, btnEN);
+
+        /**
+         * Listener para cambiar el idioma
+         */
+        tg.selectedToggleProperty().addListener((obs, oldValue, newValue) -> {
+            if (newValue != null) {
+                ToggleButton tb = (ToggleButton) newValue.getToggleGroup()
+                        .getSelectedToggle();
+                //Se comprueba el valor del Texto del ToggleButton y cambiamos el idioma predeterminado
+                switch (tb.getText()) {
+                    case "Ingles":
+                        Locale.setDefault(Locale.ENGLISH);
+                        System.out.println("Has seleccionado idioma INGLÉS");
+
+                        break;
+                    case "Frances":
+                        Locale.setDefault(Locale.FRENCH);
+                        System.out.println("Has seleccionado idioma FRANCÉS");
+                        break;
+                    case "EEUU":
+                        Locale.setDefault(Locale.US);
+                        System.out.println("Has seleccionado idioma EEUU");
+                        break;
+                    case "Italiano":
+                        Locale.setDefault(Locale.ITALIAN);
+                        System.out.println("Has seleccionado idioma Italiano");
+                        break;
+                    case "Español":
+                        Locale.setDefault(new Locale("es"));
+                        System.out.println("Has seleccionado idioma Español");
+                        break;
+                }
+                try {
+                    Parent pane = getFXMLLoader().load();
+                    MultiLenguajeUI.getPrimaryStage().getScene().setRoot(pane);
+                } catch (IOException ieo) {
+                }
+                MultiLenguajeUI.getPrimaryStage().show();
+                newValue.getToggleGroup().getSelectedToggle().setSelected(false);
+            }
+
+        });
+
+    }
+
 }
