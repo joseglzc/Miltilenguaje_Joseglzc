@@ -27,13 +27,12 @@ public class MultiLenguajeUI extends Application {
         loader.setLocation(getClass().getResource("primary.fxml"));
 
         //Seleccionamos el idioma predeterminado
-        //loader.setResources(ResourceBundle.getBundle("es.ideas.i18n.cadenas",
-         //       Locale.getDefault()));
+        loader.setResources(ResourceBundle.getBundle("es.ideas.i18n/cadenas",
+                Locale.getDefault()));
         Parent raiz = loader.load();
-        PrimaryController pc = loader.getController();
-        pc.setMainWindow(this);
+        //PrimaryController pc = loader.getController();
+        //pc.setMainWindow(this);
 
-        
         Scene scene = new Scene(raiz);
         stage.setScene(scene);
         stage.show();

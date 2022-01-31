@@ -1,24 +1,20 @@
 package es.ideas;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.Locale;
-import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.chart.AreaChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class PrimaryController implements Initializable {
 
@@ -54,18 +50,6 @@ public class PrimaryController implements Initializable {
            "viernes", "sábado", "domingo"};
        cbSemana.setItems(FXCollections.observableArrayList(dias_semana));
 
-     //Muestra los valores de Locale cada vez que se carga la escena
-        Locale localeActual = Locale.getDefault();
-        System.out.println("Locale Seleccionado: \n" +
-                " getLanguage: " + localeActual.getLanguage() +
-                " - getCountry: " + localeActual.getCountry() +
-                " - getDisplayName: " + localeActual.getDisplayName()+
-                "\n - getDisplayVariant: " + localeActual.getDisplayVariant()+
-                " - getDisplayCountry: " + localeActual.getDisplayCountry()+
-                " - getDisplayLanguage: " + localeActual.getDisplayLanguage() +
-                "\n - getISO3Country: " + localeActual.getISO3Country() + 
-                " - getISO3Languaje: " + localeActual.getISO3Language() + 
-                " - getDisplayScript: " + localeActual.getDisplayScript());
     
         //Crear un ToggleGroup para agrupar los ToggleButton
         //Sólo puede haber uno seleccionado cada vez.
@@ -81,26 +65,27 @@ public class PrimaryController implements Initializable {
                        .getSelectedToggle();               
                //Se comprueba el valor del Texto del ToggleButton y cambiamos el idioma predeterminado
                switch (tb.getText()){
-                   case "btnEN":
+                   case "Ingles":
                        Locale.setDefault(Locale.ENGLISH);
                        System.out.println("Has seleccionado idioma INGLÉS");
                        
                        break;  
-                   case "btnFR":
+                   case "Frances":
                        Locale.setDefault(Locale.FRENCH);
                        System.out.println("Has seleccionado idioma FRANCÉS");
                        break;
-                   case "btnUSA":
-                       Locale.setDefault(Locale.ENGLISH.US);
+                   case "EEUU":
+                       Locale.setDefault(Locale.US);
                        System.out.println("Has seleccionado idioma FRANCÉS");
                        break;
-                   case "btnIT":
+                   case "Italiano":
                        Locale.setDefault(Locale.ITALIAN);
                        System.out.println("Has seleccionado idioma FRANCÉS");
                        break;
-                   default:
-                       Locale.setDefault(new Locale("es", "ES"));
-                       System.out.println("Has seleccionado idioma ESPAÑOL");                       
+                   case "Español":
+                       Locale.setDefault(new Locale("es"));
+                       System.out.println("Has seleccionado idioma FRANCÉS");
+                       break;
                }
                try{
                 Parent pane = getFXMLLoader().load();
@@ -108,6 +93,7 @@ public class PrimaryController implements Initializable {
                }catch(IOException ieo){                   
                }               
                MultiLenguajeUI.getPrimaryStage().show();
+               newValue.getToggleGroup().getSelectedToggle().setSelected(false);
             }
                
         });
@@ -116,7 +102,7 @@ public class PrimaryController implements Initializable {
     
    private FXMLLoader getFXMLLoader(){
         FXMLLoader loader = new FXMLLoader();
-        loader.setResources(ResourceBundle.getBundle("es/ideas/i18n/cadenas",
+        loader.setResources(ResourceBundle.getBundle("es.ideas.i18n/cadenas",
                 Locale.getDefault()));
         loader.setLocation(getClass().getResource("primary.fxml"));
         return loader;
@@ -125,9 +111,5 @@ public class PrimaryController implements Initializable {
     public void setMainWindow(MultiLenguajeUI main){
         this.aplicacionPrincipal= main;
     }
-    
-    
-    
-    
     
 }

@@ -41,7 +41,7 @@
                         <Label prefHeight="126.0" prefWidth="600.0" text="%idioma" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         <ButtonBar layoutX="79.0" layoutY="23.0" prefHeight="80.0" prefWidth="442.0">
                           <buttons>
-                              <ToggleButton id="btnES" fx:id="btnES" minWidth="54.0" mnemonicParsing="false" prefHeight="130.0">
+                              <ToggleButton id="btnES" fx:id="btnES" accessibleHelp="%español" minWidth="54.0" mnemonicParsing="false" prefHeight="130.0" text="Español">
                                  <graphic>
                                     <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -53,7 +53,7 @@
                                     <Tooltip text="%btnES" />
                                  </tooltip>
                               </ToggleButton>
-                              <ToggleButton id="btnUSA" fx:id="btnUSA" mnemonicParsing="false" prefHeight="82.0" prefWidth="114.0" text="ToggleButton">
+                              <ToggleButton id="btnUSA" fx:id="btnUSA" accessibleHelp="%EEUU" mnemonicParsing="false" prefHeight="82.0" prefWidth="114.0" text="EEUU">
                                  <graphic>
                                     <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -65,7 +65,7 @@
                                     <Tooltip text="%btnUSA" />
                                  </tooltip>
                               </ToggleButton>
-                              <ToggleButton id="btnFR" fx:id="btnFR" minWidth="57.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="134.0" text="ToggleButton">
+                              <ToggleButton id="btnFR" fx:id="btnFR" accessibleHelp="%frances" minWidth="57.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="134.0" text="Frances">
                                  <graphic>
                                     <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -77,7 +77,7 @@
                                     <Tooltip text="%btnFR" />
                                  </tooltip>
                               </ToggleButton>
-                              <ToggleButton id="btnIT" fx:id="btnIT" mnemonicParsing="false" prefHeight="90.0" text="ToggleButton">
+                              <ToggleButton id="btnIT" fx:id="btnIT" accessibleHelp="%italiano" mnemonicParsing="false" prefHeight="90.0" text="Italiano">
                                  <graphic>
                                     <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -89,7 +89,7 @@
                                     <Tooltip text="%btnIT" />
                                  </tooltip>
                               </ToggleButton>
-                              <ToggleButton id="btnEN" fx:id="btnEN" mnemonicParsing="false" prefHeight="104.0" text="ToggleButton">
+                              <ToggleButton id="btnEN" fx:id="btnEN" accessibleHelp="%ingles" mnemonicParsing="false" prefHeight="104.0" text="Ingles">
                                  <graphic>
                                     <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -136,8 +136,8 @@
    <bottom>
       <ButtonBar BorderPane.alignment="CENTER">
          <buttons>
-            <Button fx:id="btnCancelar" mnemonicParsing="false" text="%btnCancelar" />
-            <Button fx:id="btnAceptar" mnemonicParsing="false" text="%btnAceptar" />
+            <Button fx:id="btnCancelar" accessibleHelp="%btnAceptar" mnemonicParsing="false" text="%btnCancelar" />
+            <Button fx:id="btnAceptar" accessibleHelp="%btnCancelar" mnemonicParsing="false" text="%btnAceptar" />
          </buttons>
       </ButtonBar>
    </bottom>
